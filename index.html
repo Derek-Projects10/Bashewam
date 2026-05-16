@@ -13,7 +13,7 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, white,#B0B8D8,#5986A6 );
             min-height: 100vh;
             padding: 20px;
         }
@@ -299,17 +299,20 @@
         // Sample data
         function loadSampleData() {
             students = [
-                { id: "BS2023101", name: "Abebe Kebede", class: "Grade 11" },
-                { id: "BS2023102", name: "Mekdes Tesfaye", class: "Grade 11" },
-                { id: "BS2023103", name: "Samuel Alemayehu", class: "Grade 11" },
-                { id: "BS2023104", name: "Sara Getachew", class: "Grade 11" },
-                { id: "BS2023105", name: "Yonas Hailu", class: "Grade 11" },
+                { id: "BS2023101", name: "Derek John", class: "Grade 11A" },
+                { id: "BS2023102", name: "Nahom Dereje", class: "Grade 11B" },
+                { id: "BS2023103", name: "Edom Gezahegn", class: "Grade 11C" },
+                { id: "BS2023104", name: "Betelhem Kifle", class: "Grade 11D" },
+                { id: "BS2023105", name: "Bezawit Ashenafi", class: "Grade 11E" },
+                { id: "BS2023106", name: "Olyana Geremew", class: "Grade 11F" },
+                { id: "BS2023107", name: "Ziyad Siraj", class: "Grade 11A" },
+                { id: "BS2023108", name: "Dawit Birhanu", class: "Grade 11B" },
             ];
             
             rooms = [
-                { name: "Hall A", capacity: 35, assigned: [] },
-                { name: "Room 105", capacity: 25, assigned: [] },
-                { name: "Room 106", capacity: 30, assigned: [] },
+                { name: "Room A", capacity: 3, assigned: [] },
+                { name: "Room B", capacity: 2, assigned: [] },
+                { name: "Room C", capacity: 3, assigned: [] },
             ];
             
             renderAll();
@@ -444,7 +447,7 @@
                 html += `<p style="color: #e67e22; margin: 15px 0;"><strong>${unassigned.length} students could not be assigned (no space left).</strong></p>`;
             }
             
-            html += `<button class="btn-primary" onclick="printPlacement()" style="margin-top: 15px;">🖨️ Print Placement</button>`;
+            html += `<button class="btn-primary" onclick="printPlacement()" style="margin-top: 15px;"> Print Placement</button>`;
             
             document.getElementById('resultContent').innerHTML = html;
             
@@ -472,7 +475,7 @@
             
             rooms.forEach(room => {
                 printContent += `
-                    <h2>\( {room.name} ( \){room.assigned.length}/${room.capacity})</h2>
+                    <h2 align="center">${room.name} (${room.assigned.length}/${room.capacity})</h2>
                     <table>
                         <tr>
                             <th>Student ID</th>
