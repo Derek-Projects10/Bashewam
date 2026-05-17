@@ -3,130 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bashewam School - Exam Room Placement</title>
+    <title>Bashewam School</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #e4e9f2 0%, #c3cfe2 100%);
             min-height: 100vh;
-            padding: 20px;
+            color: #333;
         }
         
         .container {
-            max-width: 1250px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
         }
         
+        /* Header */
         header {
             background: linear-gradient(135deg, #2c3e50, #1a2533);
             color: white;
-            padding: 30px;
-            text-align: center;
+            padding: 25px 0;
         }
         
-        header h1 { font-size: 2.4rem; margin-bottom: 8px; }
-        
-        .main {
-            padding: 30px;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 30px;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
         }
         
-        .sidebar, .content {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #eee;
-        }
-        
-        h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #3498db;
-        }
-        
-        .form-group {
-            margin-bottom: 18px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #34495e;
-        }
-        
-        input, select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-        
-        button {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .btn-primary { background: #3498db; color: white; }
-        .btn-primary:hover { background: #2980b9; transform: translateY(-2px); }
-        .btn-success { background: #27ae60; color: white; }
-        .btn-success:hover { background: #219a52; }
-        .btn-danger { background: #e74c3c; color: white; }
-        .btn-info { background: #17a2b8; color: white; }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            background: white;
-        }
-        
-        th, td {
-            padding: 14px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-        
-        th { background: #34495e; color: white; }
-        tr:hover { background: #f1f8ff; }
-        
-        .room-card {
-            background: white;
-            border: 2px solid #3498db;
-            border-radius: 12px;
-            padding: 18px;
-            margin-bottom: 20px;
-        }
-        
-        .rank-badge {
-            background: #f39c12;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+        .logo {
+            font-size: 1.8rem;
             font-weight: bold;
         }
         
-        .footer {
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
             text-align: center;
-            padding: 20px;
+            padding: 120px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+        
+        .btn {
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #219a52;
+            transform: scale(1.05);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 40px;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 40px;
+            background: #f8f9fa;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .feature-card h3 {
+            color: #2c3e50;
+            margin: 15px 0;
+        }
+        
+        /* Footer */
+        footer {
             background: #2c3e50;
             color: white;
-            font-size: 0.95rem;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .footer-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
         }
         .inline-emoji {
     height: 1.2em;       /* Scales perfectly with whatever font size you use */
@@ -138,300 +167,109 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1><img src="Bashlogo.jpg" class="inline-emoji" alt="School Badge"> Bashewam School</h1>
-            <p>Examination Room Placement System</p>
-        </header>
-        
-        <div class="main">
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <h2>Add Student</h2>
-                <div class="form-group">
-                    <label>Student Full Name</label>
-                    <input type="text" id="studentName" placeholder="e.g. Abebe Kebede">
-                </div>
-                <div class="form-group">
-                    <label>Student ID</label>
-                    <input type="text" id="studentId" placeholder="e.g. BS2023102">
-                </div>
-                <div class="form-group">
-                    <label>Class / Section</label>
-                    <select id="studentClass">
-                        <option value="Grade 11A">Grade 11A</option>
-                        <option value="Grade 11B">Grade 11B</option>
-                        <option value="Grade 11C">Grade 11C</option>
-                        <option value="Grade 11D" selected>Grade 11D</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Rank (1 = Best)</label>
-                    <input type="number" id="studentRank" value="1" min="1">
-                </div>
-                <button class="btn-primary" onclick="addStudent()">Add Student</button>
-
-                <hr style="margin: 30px 0;">
-
-                <h2>Add Exam Room</h2>
-                <div class="form-group">
-                    <label>Room Name / Number</label>
-                    <input type="text" id="roomName" placeholder="e.g. Room A">
-                </div>
-                <div class="form-group">
-                    <label>Capacity</label>
-                    <input type="number" id="roomCapacity" value="25" min="1">
-                </div>
-                <button class="btn-primary" onclick="addRoom()">Add Room</button>
-
-                <hr style="margin: 30px 0;">
-
-                <button class="btn-success" style="width:100%; padding:16px; font-size:1.1rem;" onclick="autoAssign(false)">
-                    🔄 Normal Assignment
-                </button>
-                <button class="btn-info" style="width:100%; margin-top:10px; padding:16px; font-size:1.1rem;" onclick="autoAssign(true)">
-                    🏆 Assign by Rank (Best First)
-                </button>
-                
-                <button class="btn-danger" style="width:100%; margin-top:15px;" onclick="clearAll()">
-                    Clear All Data
-                </button>
+    <!-- Navigation -->
+    <header>
+        <nav class="container">
+            <div class="logo"><img src="logo.png" alt="bashlogo" class="inline-emoji"> Bashewam School</div>
+            <div class="nav-links">
+                <a href="https://www.bashewam.edu.et/#/">Home</a>
+                <a href="https://www.bashewam.edu.et/#/about">About Us</a>
+                <a href="https://www.bashewam.edu.et/#/academics">Academics</a>
+                <a href="https://www.bashewam.edu.et/#/admissions">Admissions</a>
+                <a href="exam-placement.html">Exam Placement</a>
             </div>
+        </nav>
+    </header>
 
-            <!-- Main Content -->
-            <div class="content">
-                <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <h2>Students List (<span id="studentCount">0</span>)</h2>
-                    <button class="btn-primary" onclick="sortByRank()">Sort by Rank</button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to Bashewam School</h1>
+            <p>Excellence in Education • Character in Leadership</p>
+            <a href="exam-placement.html" class="btn btn-primary">
+                 Go to Exam Room Placement System
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">About Bashewam School</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Bashewam School is a leading educational institution committed to providing 
+                        quality education that nurtures academic excellence, innovation, and strong moral values.
+                    </p>
+                    <p>
+                        Established with the vision of developing well-rounded students, we offer a 
+                        comprehensive curriculum from Grade 1 to Grade 12 with modern facilities 
+                        and dedicated teaching staff.
+                    </p>
+                    <p>
+                        Our mission is to prepare students to become responsible citizens and future leaders 
+                        who can contribute positively to society.
+                    </p>
                 </div>
-                
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Rank</th>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Class</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="studentsBody"></tbody>
-                </table>
-
-                <h2 style="margin-top: 40px;">Exam Rooms</h2>
-                <div id="roomsContainer"></div>
-
-                <div id="resultContent" style="margin-top: 30px;"></div>
+                <div>
+                    <h3 style="color:#2c3e50; margin-bottom:15px;">Why Choose Bashewam?</h3>
+                    <ul style="font-size:1.1rem; line-height:2;">
+                        <li> Modern Learning Environment</li>
+                        <li> Highly Qualified Teachers</li>
+                        <li> Strong Academic Performance</li>
+                        <li> Character & Leadership Development</li>
+                        <li> Science, Technology & Arts Programs</li>
+                        <li> Safe and Supportive Community</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        
-        <div class="footer">
-            © 2026 Bashewam School • Smart Exam Room Placement System
+    </section>
+
+    <!-- Features / Quick Access -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>📚 Academic Programs</h3>
+                    <p>Comprehensive curriculum from primary to high school with strong STEM focus.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏆 Exam Management</h3>
+                    <p>Smart and fair student placement system for mid-term and final examinations.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 Student Development</h3>
+                    <p>Leadership training, clubs, and extracurricular activities.</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        let students = [];
-        let rooms = [];
+    <!-- Call to Action -->
+    <section style="padding: 80px 40px; text-align:center; background: linear-gradient(135deg, #3498db, #2c3e50); color: white;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready for Exams?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 30px;">Access the Exam Room Placement System</p>
+            <a href="exam-placement.html" class="btn btn-primary" style="font-size: 1.4rem; padding: 18px 50px;">
+                Open Exam Placement System →
+            </a>
+        </div>
+    </section>
 
-        function loadSampleData() {
-            students = [
-                { id: "BS2023101", name: "Derek John", class: "Grade 11A", rank: 3 },
-                { id: "BS2023102", name: "Nahom Dereje", class: "Grade 11B", rank: 1 },
-                { id: "BS2023103", name: "Edom Gezahegn", class: "Grade 11C", rank: 5 },
-                { id: "BS2023104", name: "Betelhem Kifle", class: "Grade 11D", rank: 2 },
-                { id: "BS2023105", name: "Bezawit Ashenafi", class: "Grade 11D", rank: 4 },
-                { id: "BS2023106", name: "Olyana Geremew", class: "Grade 11A", rank: 6 },
-                { id: "BS2023107", name: "Ziyad Siraj", class: "Grade 11B", rank: 8 },
-                { id: "BS2023108", name: "Dawit Birhanu", class: "Grade 11C", rank: 7 },
-            ];
-            
-            rooms = [
-                { name: "Room A", capacity: 3, assigned: [] },
-                { name: "Room B", capacity: 2, assigned: [] },
-                { name: "Room C", capacity: 3, assigned: [] },
-            ];
-            renderAll();
-        }
-
-        function addStudent() {
-            const name = document.getElementById('studentName').value.trim();
-            const id = document.getElementById('studentId').value.trim();
-            const studentClass = document.getElementById('studentClass').value;
-            const rank = parseInt(document.getElementById('studentRank').value) || 999;
-
-            if (!name || !id) {
-                alert("Name and Student ID are required!");
-                return;
-            }
-
-            students.push({ id, name, class: studentClass, rank });
-            document.getElementById('studentName').value = '';
-            document.getElementById('studentId').value = '';
-            renderAll();
-        }
-
-        function addRoom() {
-            const name = document.getElementById('roomName').value.trim();
-            const capacity = parseInt(document.getElementById('roomCapacity').value);
-
-            if (!name || !capacity) {
-                alert("Room name and capacity are required!");
-                return;
-            }
-
-            rooms.push({ name, capacity, assigned: [] });
-            document.getElementById('roomName').value = '';
-            renderAll();
-        }
-
-        function deleteStudent(index) {
-            students.splice(index, 1);
-            renderAll();
-        }
-
-        function deleteRoom(index) {
-            rooms.splice(index, 1);
-            renderAll();
-        }
-
-        function sortByRank() {
-            students.sort((a, b) => a.rank - b.rank);
-            renderAll();
-        }
-
-        function autoAssign(byRank = false) {
-            rooms.forEach(room => room.assigned = []);
-
-            let sortedStudents = [...students];
-            if (byRank) {
-                sortedStudents.sort((a, b) => a.rank - b.rank); // Best rank first
-            }
-
-            let studentIndex = 0;
-            for (let room of rooms) {
-                while (room.assigned.length < room.capacity && studentIndex < sortedStudents.length) {
-                    room.assigned.push(sortedStudents[studentIndex]);
-                    studentIndex++;
-                }
-            }
-
-            const unassignedCount = sortedStudents.length - studentIndex;
-            
-            let html = `<h3 style="color: ${byRank ? '#27ae60' : '#3498db'};">`;
-            html += byRank ? '🏆 Assignment by Rank Completed!' : '✅ Normal Assignment Completed!';
-            html += `</h3>`;
-
-            if (unassignedCount > 0) {
-                html += `<p style="color:#e67e22;"><strong>${unassignedCount} students could not be placed.</strong></p>`;
-            }
-
-            html += `<button class="btn-primary" onclick="printPlacement()" style="margin-top:15px;">🖨️ Print Placement Sheet</button>`;
-            
-            document.getElementById('resultContent').innerHTML = html;
-            renderAll();
-        }
-
-        function renderStudents() {
-            const tbody = document.getElementById('studentsBody');
-            tbody.innerHTML = '';
-
-            students.forEach((student, index) => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td><span class="rank-badge">${student.rank}</span></td>
-                    <td>${student.id}</td>
-                    <td>${student.name}</td>
-                    <td>${student.class}</td>
-                    <td><button class="btn-danger" style="padding:6px 12px;" onclick="deleteStudent(${index})">Remove</button></td>
-                `;
-                tbody.appendChild(row);
-            });
-
-            document.getElementById('studentCount').textContent = students.length;
-        }
-
-        function renderRooms() {
-            const container = document.getElementById('roomsContainer');
-            container.innerHTML = '';
-
-            rooms.forEach((room, index) => {
-                const div = document.createElement('div');
-                div.className = 'room-card';
-                div.innerHTML = `
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-                        <h3>${room.name}</h3>
-                        <span class="rank-badge">${room.assigned.length} / ${room.capacity}</span>
-                    </div>
-                    <div style="max-height:280px; overflow-y:auto;" id="room-list-${index}"></div>
-                    <button class="btn-danger" style="margin-top:10px;" onclick="deleteRoom(${index})">Delete Room</button>
-                `;
-                container.appendChild(div);
-
-                const listDiv = document.getElementById(`room-list-${index}`);
-                if (room.assigned.length === 0) {
-                    listDiv.innerHTML = `<p style="color:#999; text-align:center; padding:20px;">No students assigned</p>`;
-                } else {
-                    room.assigned.forEach(s => {
-                        const item = document.createElement('div');
-                        item.style.cssText = 'padding:10px; background:#f1f8ff; margin:6px 0; border-radius:6px; display:flex; justify-content:space-between;';
-                        item.innerHTML = `
-                            <span><strong>${s.rank}</strong> - ${s.id} ${s.name}</span>
-                            <small>${s.class}</small>
-                        `;
-                        listDiv.appendChild(item);
-                    });
-                }
-            });
-        }
-
-        function printPlacement() {
-            const win = window.open('', '_blank');
-            let content = `
-                <html><head><title>Bashewam School - Exam Placement</title>
-                <style>
-                    body { font-family: Arial; margin: 40px; }
-                    h1, h2 { text-align: center; }
-                    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-                    th, td { border: 1px solid black; padding: 10px; }
-                    th { background: #2c3e50; color: white; }
-                </style>
-                </head><body>
-                <h1>Bashewam School - Final Exam Room Placement</h1>
-                <p style="text-align:center;">Date: ${new Date().toLocaleDateString()}</p>
-            `;
-
-            rooms.forEach(room => {
-                content += `<h2 align="center">${room.name} (${room.assigned.length}/${room.capacity})</h2>`;
-                content += `<table><tr><th>Rank</th><th>ID</th><th>Name</th><th>Class</th></tr>`;
-                
-                room.assigned.forEach(s => {
-                    content += `<tr><td>${s.rank}</td><td>${s.id}</td><td>${s.name}</td><td>${s.class}</td></tr>`;
-                });
-                content += `</table><br>`;
-            });
-
-            content += `</body></html>`;
-            win.document.write(content);
-            win.document.close();
-            setTimeout(() => win.print(), 600);
-        }
-
-        function clearAll() {
-            if (confirm("Clear all students and rooms?")) {
-                students = [];
-                rooms = [];
-                document.getElementById('resultContent').innerHTML = '';
-                renderAll();
-            }
-        }
-
-        function renderAll() {
-            renderStudents();
-            renderRooms();
-        }
-
-        window.onload = loadSampleData;
-    </script>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="font-size: 1.4rem; margin-bottom: 10px;"><img src="logo.png" alt="bashlogo" class="inline-emoji"> Bashewam School</p>
+            <p>Shaping Future Leaders Since 2004</p>
+            <p style="margin-top: 20px;">
+                <a href="exam-placement.html" class="footer-link">Exam Room Placement</a> | 
+                Addis Ababa, Ethiopia
+            </p>
+            <p style="margin-top: 15px; opacity: 0.8;">© 2026 Bashewam School. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
